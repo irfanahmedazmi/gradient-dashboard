@@ -1,1 +1,37 @@
-
+[
+  {
+    "customer":"Customer 01",
+    "sites":[
+      {
+        "name":"customer01.com",
+        "plan":"Managed Security",
+        "status":"In Progress"
+      },
+      {
+        "name":"portal.customer01.com",
+        "plan":"Managed EDR",
+        "status":"Active"
+      }
+    ]
+  },
+  {
+    "customer":"Customer 02",
+    "sites":[
+      {
+        "name":"customer02.com",
+        "plan":"Cloud Security",
+        "status":"In Progress"
+      }
+    ]
+  },
+  {
+    "customer":"Customer 03",
+    "sites":[
+      {
+        "name":"customer03.com",
+        "plan":"NDR",
+        "status":"Active"
+      }
+    ]
+  }
+]
