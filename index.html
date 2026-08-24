@@ -6,116 +6,127 @@
 <title>Gradient Cyber Dashboard</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
 
 body{
-background:#0b1220;
-color:white;
+background:#07111f;
+color:#fff;
 display:flex;
+height:100vh;
+overflow:hidden;
 }
 
 .sidebar{
-width:240px;
-height:100vh;
-background:#111827;
-padding:25px;
-position:fixed;
+width:250px;
+background:#0d1728;
+padding:20px;
+border-right:1px solid #1c2a40;
 }
 
 .logo{
-font-size:22px;
-font-weight:bold;
-margin-bottom:40px;
-color:#00d4ff;
+font-size:24px;
+font-weight:700;
+color:#00c8ff;
+margin-bottom:30px;
 }
 
-.menu a{
-display:block;
+.nav-item{
 padding:12px;
 margin-bottom:8px;
-text-decoration:none;
-color:white;
 border-radius:8px;
+cursor:pointer;
 }
 
-.menu a:hover{
-background:#1f2937;
+.nav-item:hover{
+background:#15233a;
 }
 
 .main{
-margin-left:240px;
-padding:30px;
-width:100%;
+flex:1;
+padding:25px;
+overflow:auto;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-bottom:30px;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:20px;
 }
 
 .card{
-background:#111827;
+background:#0d1728;
 padding:20px;
 border-radius:12px;
 }
 
 .card h2{
-color:#00d4ff;
+color:#00c8ff;
 margin-bottom:10px;
 }
 
-.section-title{
-margin-bottom:15px;
-}
-
-.customer-grid{
+.content{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:320px 1fr;
 gap:20px;
 }
 
 .panel{
-background:#111827;
-padding:20px;
+background:#0d1728;
 border-radius:12px;
+padding:20px;
 }
 
 .customer{
 padding:12px;
-background:#1f2937;
+background:#15233a;
 margin-bottom:10px;
 border-radius:8px;
 cursor:pointer;
 }
 
 .customer:hover{
-background:#374151;
+background:#1e3150;
 }
 
-.timeline-item{
-padding:10px;
-margin-bottom:8px;
-background:#1f2937;
+.site-table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+.site-table th,
+.site-table td{
+padding:12px;
+border-bottom:1px solid #223552;
+text-align:left;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+margin:20px 0;
+}
+
+.tab{
+padding:10px 15px;
+background:#15233a;
 border-radius:8px;
+cursor:pointer;
 }
 
-.active{
-color:#22c55e;
+.timeline-step{
+padding:12px;
+background:#15233a;
+border-radius:8px;
+margin-bottom:10px;
 }
 
-.progress{
-color:#f59e0b;
-}
-
-.pending{
-color:#9ca3af;
+.note{
+background:#15233a;
+padding:12px;
+border-radius:8px;
+margin-bottom:10px;
 }
 </style>
 </head>
@@ -123,32 +134,40 @@ color:#9ca3af;
 <body>
 
 <div class="sidebar">
-<div class="logo">Gradient Cyber</div>
 
-<div class="menu">
-<a href="#">Dashboard</a>
-<a href="#">Customers</a>
-<a href="#">Projects</a>
-<a href="#">Reports</a>
-<a href="#">Analytics</a>
-<a href="#">Settings</a>
+<div class="logo">
+Gradient Cyber
 </div>
+
+<div class="nav-item">Dashboard</div>
+<div class="nav-item">Customers</div>
+<div class="nav-item">Projects</div>
+<div class="nav-item">Reports</div>
+<div class="nav-item">Analytics</div>
+<div class="nav-item">Settings</div>
+
 </div>
 
 <div class="main">
 
-<h1>Internal Operations Dashboard</h1>
+<h1>Operations Dashboard</h1>
+
 <br>
 
 <div class="cards">
 
 <div class="card">
 <h2>3</h2>
-<p>Total Customers</p>
+<p>Customers</p>
 </div>
 
 <div class="card">
-<h2>5</h2>
+<h2>6</h2>
+<p>Sites</p>
+</div>
+
+<div class="card">
+<h2>4</h2>
 <p>Active Projects</p>
 </div>
 
@@ -157,18 +176,15 @@ color:#9ca3af;
 <p>Completed Projects</p>
 </div>
 
-<div class="card">
-<h2>1</h2>
-<p>Projects At Risk</p>
 </div>
 
-</div>
-
-<h2 class="section-title">Customers</h2>
-
-<div class="customer-grid">
+<div class="content">
 
 <div class="panel">
+
+<h3>Customers</h3>
+
+<br>
 
 <div class="customer">Customer 01</div>
 <div class="customer">Customer 02</div>
@@ -179,35 +195,65 @@ color:#9ca3af;
 <div class="panel">
 
 <h2>Customer 01</h2>
+
+<p>Plans:
+Managed EDR, Managed Security</p>
+
+<table class="site-table">
+
+<tr>
+<th>Site</th>
+<th>Status</th>
+<th>Engineer</th>
+</tr>
+
+<tr>
+<td>customer01.com</td>
+<td>In Progress</td>
+<td>Assigned</td>
+</tr>
+
+<tr>
+<td>portal.customer01.com</td>
+<td>Active</td>
+<td>Assigned</td>
+</tr>
+
+</table>
+
+<div class="tabs">
+<div class="tab">Overview</div>
+<div class="tab">Timeline</div>
+<div class="tab">Notes</div>
+<div class="tab">Files</div>
+<div class="tab">Activity Log</div>
+</div>
+
+<h3>Timeline</h3>
+
 <br>
 
-<p><strong>Plan:</strong> Managed Security</p>
-<p><strong>Status:</strong> Active</p>
-<p><strong>Engineer:</strong> Assigned</p>
+<div class="timeline-step">✅ AR Call</div>
+<div class="timeline-step">✅ Cloud Tasks</div>
+<div class="timeline-step">🔄 Engineering Tasks</div>
+<div class="timeline-step">⏳ Pen Test</div>
+<div class="timeline-step">⏳ IT Outbrief</div>
+<div class="timeline-step">⏳ Closed</div>
 
 <br>
 
-<h3>Project Timeline</h3>
+<h3>Notes</h3>
+
 <br>
 
-<div class="timeline-item active">
-✅ AR Call Completed
+<div class="note">
+Irfan • Today 09:00<br>
+Kickoff completed.
 </div>
 
-<div class="timeline-item active">
-✅ Engineering Tasks Completed
-</div>
-
-<div class="timeline-item progress">
-🔄 Cloud Tasks In Progress
-</div>
-
-<div class="timeline-item pending">
-⏳ Penetration Test Pending
-</div>
-
-<div class="timeline-item pending">
-⏳ IT Outbrief Pending
+<div class="note">
+Engineer • Today 12:15<br>
+Cloud configuration started.
 </div>
 
 </div>
