@@ -1,266 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gradient Cyber Dashboard</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
-
-body{
-background:#07111f;
-color:#fff;
-display:flex;
-height:100vh;
-overflow:hidden;
-}
-
-.sidebar{
-width:250px;
-background:#0d1728;
-padding:20px;
-border-right:1px solid #1c2a40;
-}
-
-.logo{
-font-size:24px;
-font-weight:700;
-color:#00c8ff;
-margin-bottom:30px;
-}
-
-.nav-item{
-padding:12px;
-margin-bottom:8px;
-border-radius:8px;
-cursor:pointer;
-}
-
-.nav-item:hover{
-background:#15233a;
-}
-
-.main{
-flex:1;
-padding:25px;
-overflow:auto;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-margin-bottom:20px;
-}
-
-.card{
-background:#0d1728;
-padding:20px;
-border-radius:12px;
-}
-
-.card h2{
-color:#00c8ff;
-margin-bottom:10px;
-}
-
-.content{
-display:grid;
-grid-template-columns:320px 1fr;
-gap:20px;
-}
-
-.panel{
-background:#0d1728;
-border-radius:12px;
-padding:20px;
-}
-
-.customer{
-padding:12px;
-background:#15233a;
-margin-bottom:10px;
-border-radius:8px;
-cursor:pointer;
-}
-
-.customer:hover{
-background:#1e3150;
-}
-
-.site-table{
-width:100%;
-border-collapse:collapse;
-margin-top:15px;
-}
-
-.site-table th,
-.site-table td{
-padding:12px;
-border-bottom:1px solid #223552;
-text-align:left;
-}
-
-.tabs{
-display:flex;
-gap:10px;
-margin:20px 0;
-}
-
-.tab{
-padding:10px 15px;
-background:#15233a;
-border-radius:8px;
-cursor:pointer;
-}
-
-.timeline-step{
-padding:12px;
-background:#15233a;
-border-radius:8px;
-margin-bottom:10px;
-}
-
-.note{
-background:#15233a;
-padding:12px;
-border-radius:8px;
-margin-bottom:10px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="sidebar">
-
-<div class="logo">
-Gradient Cyber
-</div>
-
-<div class="nav-item">Dashboard</div>
-<div class="nav-item">Customers</div>
-<div class="nav-item">Projects</div>
-<div class="nav-item">Reports</div>
-<div class="nav-item">Analytics</div>
-<div class="nav-item">Settings</div>
-
-</div>
-
-<div class="main">
-
-<h1>Operations Dashboard</h1>
-
-<br>
-
-<div class="cards">
-
-<div class="card">
-<h2>3</h2>
-<p>Customers</p>
-</div>
-
-<div class="card">
-<h2>6</h2>
-<p>Sites</p>
-</div>
-
-<div class="card">
-<h2>4</h2>
-<p>Active Projects</p>
-</div>
-
-<div class="card">
-<h2>2</h2>
-<p>Completed Projects</p>
-</div>
-
-</div>
-
-<div class="content">
-
-<div class="panel">
-
-<h3>Customers</h3>
-
-<br>
-
-<div class="customer">Customer 01</div>
-<div class="customer">Customer 02</div>
-<div class="customer">Customer 03</div>
-
-</div>
-
-<div class="panel">
-
-<h2>Customer 01</h2>
-
-<p>Plans:
-Managed EDR, Managed Security</p>
-
-<table class="site-table">
-
-<tr>
-<th>Site</th>
-<th>Status</th>
-<th>Engineer</th>
-</tr>
-
-<tr>
-<td>customer01.com</td>
-<td>In Progress</td>
-<td>Assigned</td>
-</tr>
-
-<tr>
-<td>portal.customer01.com</td>
-<td>Active</td>
-<td>Assigned</td>
-</tr>
-
-</table>
-
-<div class="tabs">
-<div class="tab">Overview</div>
-<div class="tab">Timeline</div>
-<div class="tab">Notes</div>
-<div class="tab">Files</div>
-<div class="tab">Activity Log</div>
-</div>
-
-<h3>Timeline</h3>
-
-<br>
-
-<div class="timeline-step">✅ AR Call</div>
-<div class="timeline-step">✅ Cloud Tasks</div>
-<div class="timeline-step">🔄 Engineering Tasks</div>
-<div class="timeline-step">⏳ Pen Test</div>
-<div class="timeline-step">⏳ IT Outbrief</div>
-<div class="timeline-step">⏳ Closed</div>
-
-<br>
-
-<h3>Notes</h3>
-
-<br>
-
-<div class="note">
-Irfan • Today 09:00<br>
-Kickoff completed.
-</div>
-
-<div class="note">
-Engineer • Today 12:15<br>
-Cloud configuration started.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</body>
-</html>
+[
+  {
+    "id": 1,
+    "name": "Customer 01",
+    "sites": [
+      {
+        "name": "customer01.com",
+        "status": "Engineering Tasks In Progress",
+        "stage": "Engineering Tasks",
+        "nextStage": "Pen Test",
+        "engineer": "John Smith",
+        "health": "🟢 On Track"
+      },
+      {
+        "name": "portal.customer01.com",
+        "status": "Waiting for customer firewall whitelist",
+        "stage": "Cloud Tasks",
+        "nextStage": "Engineering Tasks",
+        "engineer": "Sarah Lee",
+        "health": "🟡 Waiting On Customer"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Customer 02",
+    "sites": [
+      {
+        "name": "customer02.com",
+        "status": "Pen Test Scheduled",
+        "stage": "Pen Test",
+        "nextStage": "IT Outbrief",
+        "engineer": "Mike Jones",
+        "health": "🔵 Scheduled"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Customer 03",
+    "sites": [
+      {
+        "name": "customer03.com",
+        "status": "Blocked awaiting credentials",
+        "stage": "Cloud Tasks",
+        "nextStage": "Engineering Tasks",
+        "engineer": "David Brown",
+        "health": "🔴 Blocked"
+      }
+    ]
+  }
+]
